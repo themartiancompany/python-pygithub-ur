@@ -2,7 +2,7 @@
 
 pkgbase=python-pygithub
 pkgname=('python-pygithub' 'python2-pygithub')
-pkgver=1.26.0
+pkgver=1.27.1
 pkgrel=1
 pkgdesc="Use the full Github API v3"
 arch=('any')
@@ -17,18 +17,18 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/PyGithub"
+  cd "$srcdir"/PyGithub
   python setup.py build
 
-  cd "$srcdir/PyGithub-py2"
+  cd "$srcdir"/PyGithub-py2
   python2 setup.py build
 }
 
 check() {
-  cd "$srcdir/PyGithub"
+  cd "$srcdir"/PyGithub
   python setup.py test
 
-  cd "$srcdir/PyGithub-py2"
+  cd "$srcdir"/PyGithub-py2
   python2 setup.py test
 }
 
@@ -36,12 +36,12 @@ package_python-pygithub() {
   depends=('python')
 
   cd PyGithub
-  python setup.py install --root="${pkgdir}" --optimize=1
+  python setup.py install --root="$pkgdir" --optimize=1
 }
 
 package_python2-pygithub() {
   depends=('python2')
 
   cd PyGithub-py2
-  python2 setup.py install --root="${pkgdir}" --optimize=1
+  python2 setup.py install --root="$pkgdir" --optimize=1
 }

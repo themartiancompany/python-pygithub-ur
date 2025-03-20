@@ -47,7 +47,7 @@ arch=(
 license=(
   'LGPL'
 )
-_https="https://github.com"
+_http="https://github.com"
 _ns="${_Pkg}"
 url="${_http}/${_ns}/${_Pkg}"
 depends=(
